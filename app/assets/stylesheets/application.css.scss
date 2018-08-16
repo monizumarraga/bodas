@@ -1,0 +1,61 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+    background-color:#dde9ff;
+}
+
+.container{
+    background-color: #eff4f7;
+    width: 60%;
+    height: auto;
+    color: #2e4084;
+    background-position: center; 
+    margin: auto;
+    padding: 20px;
+    border: 5px solid #dde9ee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+}
+
+.containerTitle{
+    background-position: center; 
+    margin: 20px;
+    text-align: center;
+}
+
+.actions{
+    self-align: center;
+    margin:3px;
+}
+
+.fieldBox{
+    color: #2e4084;
+    border: 1px solid #2e4084;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.connectLinks{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+}
+
+.navbar {
+    color: #fff;
+    background-color: #eff4f7;
+}
+.nav-item {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.nav-link{
+    color: #2e4084;
+}

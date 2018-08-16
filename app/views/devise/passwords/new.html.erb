@@ -1,0 +1,20 @@
+<div class="container">
+  <div>
+    <h2 class="containerTitle">Olvidaste la contraseña</h2>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+    
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit "Enviame las instrucciones de cambio de contraseña", class:"btn btn-light center" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="connectLinks">
+  <%= render "devise/shared/links" %>
+</div>
