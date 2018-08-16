@@ -17,24 +17,22 @@ class InformationController < ApplicationController
     @information = Information.new
   end
 
-  # GET /information/1/edit
-  def edit
-  end
-
   # POST /information
   # POST /information.json
   def create
     @information = Information.new(information_params)
-
-    respond_to do |format|
-      if @information.save
-        format.html { redirect_to @information, notice: 'Information was successfully created.' }
-        format.json { render :show, status: :created, location: @information }
-      else
-        format.html { render :new }
-        format.json { render json: @information.errors, status: :unprocessable_entity }
-      end
+    
+    @information.user=current_user
+    if @information.save
+      flash[:success] = "Información correctamente añadida"
+      redirect_to information_path(@information)
+    else
+      render 'new'
     end
+  end
+  
+  # GET /information/1/edit
+  def edit
   end
 
   # PATCH/PUT /information/1

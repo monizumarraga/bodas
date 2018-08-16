@@ -1,27 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Information</h1>
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Información</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Info</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @information.each do |information| %>
-      <tr>
-        <td><%= information.info %></td>
-        <td><%= link_to 'Show', information %></td>
-        <td><%= link_to 'Edit', edit_information_path(information) %></td>
-        <td><%= link_to 'Destroy', information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table class ="indexTable">
+      <thead>
+        <tr>
+          <th class="indexContent">Info</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @information.each do |information| %>
+          <tr>
+            <td class="indexContent"><%= information.info %></td>
+            <td class="indexButton"><%= link_to 'Mostrar', information %></td>
+            <td class="indexButton"><%= link_to 'Editar', edit_information_path(information) %></td>
+            <td class="indexButton"><%= link_to 'Eliminar', information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Information', new_information_path %>
+<div class="connectLinks">
+<%= link_to 'Nueva Información', new_information_path %>
+</div>
+
+

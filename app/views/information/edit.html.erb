@@ -1,6 +1,11 @@
-<h1>Editing Information</h1>
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Editing Information</h2>
+        <%= render 'form', information: @information %>
+    </div>
+</div>
 
-<%= render 'form', information: @information %>
-
-<%= link_to 'Show', @information %> |
-<%= link_to 'Back', information_index_path %>
+<div class="connectLinks">
+<%= link_to 'Mostrar', @information %> |
+<%= link_to 'Atrás', information_index_path %>
+</div>

@@ -5,7 +5,27 @@ body{
     background-color:#dde9ff;
 }
 
-.container{
+.nav-layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.body-layout{
+    width: 85%;
+    margin: 3%;
+}
+
+.nav-right{
+    width: 15%;
+    display: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.signBox{
     background-color: #eff4f7;
     width: 60%;
     height: auto;
@@ -21,10 +41,55 @@ body{
     text-overflow: ellipsis;
 }
 
-.containerTitle{
+.signBoxDiv{
+    width:90%;
+}
+
+.signBoxTitle{
     background-position: center; 
     margin: 20px;
     text-align: center;
+}
+
+.infoBox{
+    background-color: #eff4f7;
+    width: 95%;
+    height: auto;
+    color: #2e4084;
+    background-position: center; 
+    margin: auto;
+    padding: 20px;
+    border: 5px solid #dde9ee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+}
+
+.infoBoxDiv{
+    width:90%;
+}
+
+.infoBoxTitle{
+    background-position: center; 
+    margin: 20px;
+    text-align: center;
+}
+
+.indexTable {
+    width: 100%; 
+    margin: 5px;
+}
+
+.indexContent {
+    width: 70%; 
+    margin: 10px;
+}
+
+.indexButton {
+    width: 10%; 
+    margin: 5px;
 }
 
 .actions{
@@ -38,6 +103,15 @@ body{
     border-radius: 2px;
     margin-bottom: 10px;
     width: 100%;
+}
+
+.fieldText{
+    color: #2e4084;
+    border: 1px solid #2e4084;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    width: 100%;
+    
 }
 
 .connectLinks{

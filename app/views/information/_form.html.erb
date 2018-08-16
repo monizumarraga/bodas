@@ -1,22 +1,23 @@
-<%= form_with(model: information, local: true) do |form| %>
-  <% if information.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(information.errors.count, "error") %> prohibited this information from being saved:</h2>
 
-      <ul>
-      <% information.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= form_with(model: information, local: true) do |form| %>
+      <% if information.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(information.errors.count, "error") %> prohibited this information from being saved:</h2>
+    
+          <ul>
+          <% information.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :info %>
-    <%= form.text_area :info %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    
+      <div class="field">
+        <%= form.label :info %>
+        <%= form.text_area :info, rows: 10, class: "fieldText"  %>
+      </div>
+    
+      <div class="actions">
+        <%= form.submit class:"btn btn-light center"  %>
+      </div>
+    <% end %>

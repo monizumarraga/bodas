@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Info:</strong>
-  <%= @information.info %>
-</p>
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Info:</h2>
+    <%= @information.info %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_information_path(@information) %> |
-<%= link_to 'Back', information_index_path %>
+<div class="connectLinks">
+  <%= link_to 'Editar', edit_information_path(@information) %> |
+  <%= link_to 'Atrás', information_index_path %>
+</div>
