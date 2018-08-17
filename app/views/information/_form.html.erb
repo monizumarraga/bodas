@@ -1,9 +1,9 @@
 
     <%= form_with(model: information, local: true) do |form| %>
+
       <% if information.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(information.errors.count, "error") %> prohibited this information from being saved:</h2>
-    
+          <h2><%= pluralize(information.errors.count, "error") %> esta información no se puede guardar:</h2>
           <ul>
           <% information.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -11,12 +11,44 @@
           </ul>
         </div>
       <% end %>
+
     
       <div class="field">
-        <%= form.label :info %>
+        <%= form.label 'Nombre' %>
+        <%= form.text_field :name, rows: 10, class: "fieldText"  %>
+      </div>
+      
+      <div class="field">
+        <%= form.label 'Ciudad' %>
+        <%= form.text_field :city, rows: 10, class: "fieldText"  %>
+      </div>
+      
+      <div class="field">
+        <%= form.label 'Día' %>
+        <%= form.date_field :date, rows: 10, class: "fieldText"  %>
+      </div>
+      
+      <div class="field">
+        <%= form.label 'Hora' %>
+        <%= form.time_field :hour, rows: 10, class: "fieldText"  %>
+      </div>
+      
+      <div class="field">
+        <%= form.label 'Ceremonia' %>
+        <%= form.text_field :place, rows: 10, class: "fieldText"  %>
+      </div>
+    
+      <div class="field">
+        <%= form.label 'Celebración' %>
+        <%= form.text_field :restaurant, rows: 10, class: "fieldText"  %>
+      </div>
+      
+      <div class="field">
+        <%= form.label 'Detalles' %>
         <%= form.text_area :info, rows: 10, class: "fieldText"  %>
       </div>
     
+      
       <div class="actions">
         <%= form.submit class:"btn btn-light center"  %>
       </div>

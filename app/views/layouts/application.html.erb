@@ -11,12 +11,12 @@
 
   <body>
       <%= render 'layouts/navigation' %>
-      <%= render 'layouts/messages' %>
       <div class="nav-layout">
         <div class="body-layout">
+          <%= render 'layouts/messages' %>
           <%= yield %>
         </div>
-        <div class= "nav-right">
+        <div class= "right-layout">
           <%= render 'layouts/navigation_right' %>
         </div>
       </div>

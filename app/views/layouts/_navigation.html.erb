@@ -5,6 +5,12 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+    <ul class="navbar-nav mr-auto">
+      <li class="dropdown" style="list-style-type:none">
+        <%= link_to "Listado", list_path, class:"dropdown-item"%>
+      </li>
+    </ul>
     <ul class="navbar-nav mr-auto navbar-right">
       <% if user_signed_in? %>
             <% if ! true%>
@@ -57,16 +63,17 @@
       <% end %>
     </ul>
     <%if !true%>
-    <%= form_tag users_search_path, remote: true, method: :get, id: "users_search-form" do %>
-      <div class="form-inline my-2 my-lg-0">
-        <%= text_field_tag :search_param, params[:search_param], 
-                                  placeholder: "Enter name or email", 
-                                  autofocus: true,
-                                  class: "form-control mr-sm-2" %>
-        <%= button_tag(type: :submit, class: "btn btn-outline-success my-2 my-sm-0") do %>
-          </i> Search
-        <% end %>
-      </div>
+      <%= form_tag users_search_path, remote: true, method: :get, id: "users_search-form" do %>
+        <div class="form-inline my-2 my-lg-0">
+          <%= text_field_tag :search_param, params[:search_param], 
+                                    placeholder: "Enter name or email", 
+                                    autofocus: true,
+                                    class: "form-control mr-sm-2" %>
+          <%= button_tag(type: :submit, class: "btn btn-outline-success my-2 my-sm-0") do %>
+            </i> Search
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
-    <% end %>
+  </div>
 </nav>

@@ -1,15 +1,12 @@
-<nav class="nav nav-right">
     <% if user_signed_in? %>
-    
-      
+        <% if current_user.image %>
+            <%= link_to "Imagen", image_path(current_user.image) %>
+        <%else%>
+            <%= link_to "Imagen", new_image_path %>
+        <%end%>
         <% if current_user.information %>
             <%= link_to "Información", information_path(current_user.information) %>
         <%else%>
             <%= link_to "Información", new_information_path %>
         <%end%>
-        <a class="nav-link active" href="#">Active</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link disabled" href="#">Disabled</a>
     <%end%>
-</nav>

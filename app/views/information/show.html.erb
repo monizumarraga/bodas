@@ -3,7 +3,62 @@
 <div class="infoBox">
   <div class="infoBoxDiv">
     <h2 class="infoBoxTitle">Info:</h2>
-    <%= @information.info %>
+    <div>
+      <h3 class="infoTitle">Nombre:</h3>
+      <%if @information.name.length >0 %>
+        <p class="infoDetails"><%= @information.name %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Ciudad:</h3>
+      <%if @information.city.length >0 %>
+        <p class="infoDetails"><%= @information.city %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Día:</h3>
+      <%if @information.date %>
+        <p class="infoDetails"><%= @information.date %></p>
+      <%else%>
+        <p class="infoDetails">00/00/0000</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Hora:</h3>
+      <%if @information.hour %>
+        <p class="infoDetails"><%= @information.hour %></p>
+      <%else%>
+        <p class="infoDetails">00:00</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Sitio:</h3>
+      <%if @information.place.length >0%>
+        <p class="infoDetails"><%= @information.place %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Celebración:</h3>
+      <%if @information.restaurant.length >0 %>
+        <p class="infoDetails"><%= @information.restaurant %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Información:</h3>
+      <%if @information.info.length >0 %>
+        <p class="infoDetails"><%= @information.info %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
   </div>
 </div>
 

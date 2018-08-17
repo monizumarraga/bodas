@@ -15,7 +15,12 @@
       <tbody>
         <% @information.each do |information| %>
           <tr>
-            <td class="indexContent"><%= information.info %></td>
+            <td class="indexContent"><%= information.name %></td>
+            <td class="indexContent"><%= information.city %></td>
+            <td class="indexContent"><%= information.date %></td>
+            <td class="indexContent"><%= information.hour %></td>
+            <td class="indexContent"><%= information.place %></td>
+            <td class="indexContent"><%= information.restaurant %></td>
             <td class="indexButton"><%= link_to 'Mostrar', information %></td>
             <td class="indexButton"><%= link_to 'Editar', edit_information_path(information) %></td>
             <td class="indexButton"><%= link_to 'Eliminar', information, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,9 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle"><%- model_class = Image -%></h2>
+        <div class="page-header">
+          <h2 class="infoBoxTitle"><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h2>
+        </div>
+        <%= render :partial => 'form' %>
+    </div>
+</div>

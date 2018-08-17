@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_064040) do
+ActiveRecord::Schema.define(version: 2018_08_17_063806) do
+
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.string "picture"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_images_on_user_id"
+  end
 
   create_table "information", force: :cascade do |t|
     t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "name"
+    t.date "date"
+    t.string "place"
+    t.string "restaurant"
+    t.string "city"
+    t.datetime "hour"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_08_16_064040) do
     t.datetime "updated_at", null: false
     t.string "authentication_token", limit: 30
     t.string "reset_digest"
+    t.boolean "admin", default: false
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
