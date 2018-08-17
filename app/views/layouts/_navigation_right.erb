@@ -5,7 +5,11 @@
             <%= link_to "Imagen", new_image_path %>
         <%end%>
         <% if current_user.information %>
+            <%if current_user.information.id %>
             <%= link_to "Información", information_path(current_user.information) %>
+            <%else%>
+            <%= link_to "Información", new_information_path %>
+            <%end%>
         <%else%>
             <%= link_to "Información", new_information_path %>
         <%end%>
