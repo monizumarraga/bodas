@@ -1,0 +1,42 @@
+<%= form_with(model: detail, local: true) do |form| %>
+  <% if detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
+
+      <ul>
+      <% detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Tipo" %>
+    <%= form.select :case, ["Hotel", "Peluquería", "Maquillaje", "Autobuses", "Preboda"] %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Nombre" %>
+    <%= form.text_field :name, class: "fieldText" %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Sitio" %>
+    <%= form.text_field :place, class: "fieldText" %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Contacto" %>
+    <%= form.text_field :contact, class: "fieldText" %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Información" %>
+    <%= form.text_area :extra, row:8, class: "fieldText" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-light center" %>
+  </div>
+<% end %>

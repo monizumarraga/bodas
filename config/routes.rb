@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :presents
+  resources :details
   resources :images
   resources :information
   devise_for :users, :controllers => { registrations: 'users/registrations', sessions: 'users/sessions', :passwords => "users/passwords" }

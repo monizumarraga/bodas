@@ -1,0 +1,39 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Detalles</h2>
+
+<table class ="indexTable">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Place</th>
+      <th>Contact</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @details.each do |detail| %>
+      <tr>
+        <td class="indexContent"><%= render 'formimage', detailcase: detail.case %></td>
+        <td class="indexContent"><%= detail.case %></td>
+        <td class="indexContent"><%= detail.name %></td>
+        <td class="indexContent"><%= detail.place %></td>
+        <td class="indexContent"><%= detail.contact %></td>
+        <td class="indexButton"><%= link_to 'Show', detail %></td>
+        <td class="indexButton"><%= link_to 'Edit', edit_detail_path(detail) %></td>
+        <td class="indexButton"><%= link_to 'Destroy', detail, method: :delete, data: { confirm: ¿Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  </div>
+</div>
+
+<br>
+
+<div class="connectLinks">
+<%= link_to 'Nuevo Detalle', new_detail_path %>
+</div>

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="infoBox">
   <div class="infoBoxDiv">
     <h2 class="infoBoxTitle">Información</h2>
@@ -23,7 +21,7 @@
             <td class="indexContent"><%= information.restaurant %></td>
             <td class="indexButton"><%= link_to 'Mostrar', information %></td>
             <td class="indexButton"><%= link_to 'Editar', edit_information_path(information) %></td>
-            <td class="indexButton"><%= link_to 'Eliminar', information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="indexButton"><%= link_to 'Eliminar', information, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
           </tr>
         <% end %>
       </tbody>
@@ -36,5 +34,3 @@
 <div class="connectLinks">
 <%= link_to 'Nueva Información', new_information_path %>
 </div>
-
-

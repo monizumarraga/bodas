@@ -1,0 +1,11 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Editar Regalo</h2>
+        <%= render 'form', present: @present %>
+    </div>
+</div>
+
+<div class="connectLinks">
+    <%= link_to 'Mostrar', @present %> |
+    <%= link_to 'Atrás', presents_path %>
+</div>

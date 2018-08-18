@@ -1,0 +1,40 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Regalo:</h2>
+    <div>
+      <h3 class="infoTitle">Artículo:</h3>
+      <%if @present.name.length >0 %>
+        <p class="infoDetails"><%= @present.name %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Precio:</h3>
+      <%if @present.price %>
+        <p class="infoDetails"><%= @present.price %>€</p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <%if @present.image %>
+        <h3 class="infoTitle">Imagen:</h3>
+        <%= image_tag(@present.image.picture.url, size: "300x300") if @present.image.picture? %>
+        <%= link_to "Editar", edit_image_path(@present.image) %>
+        <%= link_to "Eliminar", 
+              image_path(@present.image),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Estás seguro?')) },
+              :class => 'btn btn-danger' %>
+      <%else%>
+        <%= render :partial => 'images/formpresent' %>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+<div class="connectLinks">
+  <%= link_to 'Editar', edit_present_path(@present) %> |
+  <%= link_to 'Atrás', presents_path %>
+</div>

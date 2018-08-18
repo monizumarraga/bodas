@@ -25,7 +25,20 @@
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </div>
   </div>
+  <%if !true%>
   <%= f.submit nil, :class => 'btn btn-light center' %>
+  <%end%>
+  
+  <div class="field">
+    <%= f.label 'Usuario', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user, value: current_user.id %>
+    </div>
+  </div>
+  
+  
+  <%= f.submit nil, :class => 'btn btn-light center' %>
+  
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
     images_path, :class => 'btn btn-light center' %>
 <% end %>

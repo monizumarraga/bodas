@@ -1,16 +1,42 @@
     <% if user_signed_in? %>
-        <% if current_user.image %>
-            <%= link_to "Imagen", image_path(current_user.image) %>
-        <%else%>
-            <%= link_to "Imagen", new_image_path %>
-        <%end%>
-        <% if current_user.information %>
-            <%if current_user.information.id %>
-            <%= link_to "Información", information_path(current_user.information) %>
+        <div>
+            <%= image_tag("imagen.png", :class => "imageNav") %>
+            <% if current_user.image %>
+                <%= link_to "Imagen", image_path(current_user.image) %>
             <%else%>
-            <%= link_to "Información", new_information_path %>
+                <%= link_to "Imagen", new_image_path %>
             <%end%>
-        <%else%>
-            <%= link_to "Información", new_information_path %>
-        <%end%>
+            </div>
+        <div>
+            <%= image_tag("nosotros.png", :class => "imageNav") %>
+            <% if current_user.information %>
+                <%if current_user.information.id %>
+                <%= link_to "Información", information_path(current_user.information) %>
+                <%else%>
+                <%= link_to "Información", new_information_path %>
+                <%end%>
+            <%else%>
+                <%= link_to "Información", new_information_path %>
+            <%end%>
+        </div>
+        <div>
+            <% if current_user.details.length > 0 %>
+                <%= image_tag("lista.png", :class => "imageNav") %>
+                <%= link_to "Detalles", details_path %>
+            <%end%>
+        </div>
+        <div>
+            <%= image_tag("evento.png", :class => "imageNav") %>
+            <%= link_to "Nuevo detalle", new_detail_path %>
+        </div>
+        <div>
+            <% if current_user.presents.length > 0 %>
+                <%= image_tag("listaregalos.png", :class => "imageNav") %>
+                <%= link_to "Regalos", presents_path %>
+            <%end%>
+        </div>
+        <div>
+            <%= image_tag("regalo.png", :class => "imageNav") %>
+            <%= link_to "Nuevo regalo", new_present_path %>
+        </div>
     <%end%>

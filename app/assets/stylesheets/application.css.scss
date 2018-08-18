@@ -10,6 +10,15 @@ body{
     background-color: #eff4f7;
     margin: 0px;
     font-size: 1.75em;
+    display: flex;
+}
+
+.navbar-brand{
+    font-size: 2em;
+}
+
+.navbar-toggler{
+    height: 10px;
 }
 
 .nav-item {
@@ -28,6 +37,25 @@ body{
     justify-content: center;
     flex-direction: row;
     font-size: 1.5em;
+}
+
+.navbar-collapse{
+    width: 70%;
+}
+
+.logoNav{
+    width:45px;
+    height:auto;
+}
+
+.imageNav{
+    width:40px;
+    height:40px;
+}
+
+.imageShow{
+    width:40px;
+    height:auto;
 }
 
 .right-layout{
@@ -164,6 +192,7 @@ body{
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+    padding:10px;
 }
 
 .userName{

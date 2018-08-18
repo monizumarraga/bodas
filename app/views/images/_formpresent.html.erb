@@ -1,0 +1,35 @@
+<%= form_for @image, :html => { multipart: true, :class => "form-horizontal image" } do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@image.errors.count, "error") %> esta imagen no se puede guardar.</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% @image.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label 'Imagen', :class => 'control-label' %>
+    <div class="imageButton">
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <%= f.label 'Regalo', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :present, value:  @present.id %>
+    </div>
+  </div>
+  
+
+  <%= f.submit nil, :class => 'btn btn-light center' %>
+  
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    images_path, :class => 'btn btn-light center' %>
+<% end %>

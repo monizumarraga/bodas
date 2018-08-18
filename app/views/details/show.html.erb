@@ -1,0 +1,50 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Detalle:</h2>
+    <div>
+      <h3 class="infoTitle">Tipo:</h3>
+      <%if @detail.case.length >0 %>
+        <%= render 'formimage', detailcase: @detail.case %>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Nombre:</h3>
+      <%if @detail.name %>
+        <p class="infoDetails"><%= @detail.name %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Sitio:</h3>
+      <%if @detail.place.length >0%>
+        <p class="infoDetails"><%= @detail.place %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Contacto:</h3>
+      <%if @detail.contact.length >0 %>
+        <p class="infoDetails"><%= @detail.contact %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Extra:</h3>
+      <%if @detail.extra.length >0 %>
+        <p class="infoDetails"><%= @infodetail.extra %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+<div class="connectLinks">
+  <%= link_to 'Editar', edit_detail_path(@detail) %> |
+  <%= link_to 'Atrás', details_path %>
+</div>

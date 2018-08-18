@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_17_063806) do
+ActiveRecord::Schema.define(version: 2018_08_18_063800) do
+
+# Could not dump table "data" because of following StandardError
+#   Unknown type 'reference' for column 'user'
+
+  create_table "details", force: :cascade do |t|
+    t.string "case"
+    t.string "name"
+    t.string "place"
+    t.string "contact"
+    t.text "extra"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_details_on_user_id"
+  end
 
   create_table "images", force: :cascade do |t|
     t.string "name"
@@ -18,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_08_17_063806) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "present_id"
+    t.index ["present_id"], name: "index_images_on_present_id"
     t.index ["user_id"], name: "index_images_on_user_id"
   end
 
@@ -32,6 +49,15 @@ ActiveRecord::Schema.define(version: 2018_08_17_063806) do
     t.string "restaurant"
     t.string "city"
     t.datetime "hour"
+  end
+
+  create_table "presents", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_presents_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

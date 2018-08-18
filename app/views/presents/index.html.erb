@@ -1,0 +1,40 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">Regalos</h2>
+
+    <table class ="indexTable">
+      <thead>
+        <tr>
+          <th>Articulo</th>
+          <th>Precio</th>
+          <th>Foto</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @presents.each do |present| %>
+          <tr>
+            <td class="indexContent"><%= present.name %></td>
+            <td class="indexContent"><%= present.price %></td>
+            <%if present.image%>
+            <td class="indexContent"><%= image_tag(present.image.picture.url, width: "auto", height: "150") if present.image.picture? %></td>
+            <%else%>
+            <td class="indexContent"></td>
+            <%end%>
+            <td class="indexButton"><%= link_to 'Mostrar', present %></td>
+            <td class="indexButton"><%= link_to 'Editar', edit_present_path(present) %></td>
+            <td class="indexButton"><%= link_to 'Eliminar', present, method: :delete, data: { confirm: '¿Estás seguro??' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<div class="connectLinks">
+<%= link_to 'Nuevo Regalo', new_present_path %>
+</div>
+
+
