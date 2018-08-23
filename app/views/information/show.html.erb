@@ -57,6 +57,14 @@
         <p class="infoDetails">-</p>
       <%end%>
     </div>
+    <div>
+      <h3 class="infoTitle">Nota para regalos:</h3>
+      <%if @information.presentinfo%>
+        <p class="infoDetails"><%= @information.presentinfo %></p>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
   </div>
 </div>
 

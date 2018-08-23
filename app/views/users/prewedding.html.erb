@@ -1,0 +1,36 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <div class="userDetailsImage">
+    <%= render 'details/formimage', detailcase: "Preboda" %>
+    </div>
+      <% if @prewedding %>
+        <% @prewedding.each do |detail| %>
+        <h2 class="userUsName">¡¡¡Empezamos antes de tiempo!!!</h2>
+        <br>
+        <br>
+        <h2 class="userUsInfo">
+          <% if detail.introduction %>
+            <%= detail.introduction %>
+          <% end %>
+          <br>
+          <br>
+          <% if detail.name.length >0 %>
+            Os esperamos en <%= detail.name %>
+          <% end %>
+          <% if detail.place.length >0 %>
+            (<%= detail.place %>)
+          <% end %>
+          <br>
+          <br>
+          <% if detail.extra.length >0 %>
+            <%= detail.extra %>
+          <% end %>
+        </h2>
+        <%end%>
+      <% else %>
+       <h2 class="userUsInfo">
+          No hay información disponible
+        </h2>
+      <%end%>
+  </div>
+</div>

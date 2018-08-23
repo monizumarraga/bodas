@@ -47,7 +47,11 @@
         <%= form.label 'Detalles' %>
         <%= form.text_area :info, rows: 10, class: "fieldText"  %>
       </div>
-    
+      
+      <div class="field">
+        <%= form.label 'Nota para regalos' %>
+        <%= form.text_area :presentinfo, rows: 10, class: "fieldText"  %>
+      </div>
       
       <div class="actions">
         <%= form.submit class:"btn btn-light center"  %>

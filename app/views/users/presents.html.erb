@@ -1,0 +1,17 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <div class="userDetailsImage">
+    <%= image_tag("regalo.png") %>
+    </div>
+    <h2 class="infoBoxTitle">Lista de boda</h2>
+    <% if @seluser.information %>
+     <% if @seluser.information.presentinfo %>
+       <h2 class="userUsInfo">
+           <%= @seluser.information.presentinfo%>
+        </h2>
+      <% end %>
+    <% end %>
+    
+    </h2>
+  </div>
+</div>
