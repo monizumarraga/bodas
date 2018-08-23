@@ -4,7 +4,11 @@ class PresentsController < ApplicationController
   # GET /presents
   # GET /presents.json
   def index
-    @presents = Present.all
+    if current_user && !current_user.admin?
+      @presents = current_user.presents.all
+    else
+      @presents=Present.all
+    end
   end
 
   # GET /presents/1

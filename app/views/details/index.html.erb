@@ -17,14 +17,16 @@
   <tbody>
     <% @details.each do |detail| %>
       <tr>
-        <td class="indexContent"><%= render 'formimage', detailcase: detail.case %></td>
+        <td class="indexContent"><div class="imageShow"><%= render 'formimage', detailcase: detail.case %></div></td>
         <td class="indexContent"><%= detail.case %></td>
         <td class="indexContent"><%= detail.name %></td>
         <td class="indexContent"><%= detail.place %></td>
         <td class="indexContent"><%= detail.contact %></td>
-        <td class="indexButton"><%= link_to 'Show', detail %></td>
-        <td class="indexButton"><%= link_to 'Edit', edit_detail_path(detail) %></td>
-        <td class="indexButton"><%= link_to 'Destroy', detail, method: :delete, data: { confirm: ¿Estás seguro?' } %></td>
+        <% if user_signed_in? && (current_user==detail.user || current_user.admin?)  %>
+          <td class="indexButton"><%= link_to 'Show', detail %></td>
+          <td class="indexButton"><%= link_to 'Edit', edit_detail_path(detail) %></td>
+          <td class="indexButton"><%= link_to 'Destroy', detail, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

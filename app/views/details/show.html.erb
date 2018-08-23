@@ -4,7 +4,15 @@
     <div>
       <h3 class="infoTitle">Tipo:</h3>
       <%if @detail.case.length >0 %>
-        <%= render 'formimage', detailcase: @detail.case %>
+        <div class="imageShow"><%= render 'formimage', detailcase: @detail.case %></div>
+      <%else%>
+        <p class="infoDetails">-</p>
+      <%end%>
+    </div>
+    <div>
+      <h3 class="infoTitle">Mensaje:</h3>
+      <%if @detail.introduction.length >0 %>
+        <p class="infoDetails"><%= @detail.introduction %></p>
       <%else%>
         <p class="infoDetails">-</p>
       <%end%>
@@ -45,6 +53,8 @@
 </div>
 
 <div class="connectLinks">
-  <%= link_to 'Editar', edit_detail_path(@detail) %> |
+  <% if user_signed_in? && (current_user==@detail.user || current_user.admin?)  %>
+    <%= link_to 'Editar', edit_detail_path(@detail) %> |
+  <% end%>
   <%= link_to 'Atrás', details_path %>
 </div>

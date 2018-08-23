@@ -68,6 +68,11 @@ body{
     padding-left: 20px;
 }
 
+.navRightTitle{
+    font-size:1.2em;
+    color: #da2d7c;
+}
+
 .body-layout{
     width: 85%;
     margin: 3%;
@@ -212,6 +217,30 @@ body{
 
 .userImage{
     justify-self: end;
+}
+
+.userUsName{
+    font-size:2em;
+    text-align: center;
+    color: #da2d7c;
+}
+
+.userUsImage{
+    text-align: center;
+    height:200px;
+    width:auto;
+}
+
+.userUsInfo{
+    font-size:1.25em;
+    text-align: center;
+    color: #6074bd;
+}
+
+.userDetailsImage{
+    text-align: center;
+    height:60px;
+    width:auto;
 }
 
 .infoTitle{

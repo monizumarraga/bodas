@@ -1,4 +1,21 @@
 <%if detailcase == "Hotel" %>
+    <%= image_tag("hotel.png") %>
+<%end%>
+<%if detailcase == "Peluquería" %>
+    <%= image_tag("peluqueria.png") %>
+<%end%>
+<%if detailcase == "Maquillaje" %>
+    <%= image_tag("maquillaje.png") %>
+<%end%>
+<%if detailcase == "Autobuses" %>
+    <%= image_tag("bus.png") %>
+<%end%>
+<%if detailcase == "Preboda" %>
+    <%= image_tag("preboda.png") %>
+<%end%>
+
+<% if !true%>
+<%if detailcase == "Hotel" %>
     <%= image_tag("hotel.png", :class => "imageShow") %>
 <%end%>
 <%if detailcase == "Peluquería" %>
@@ -12,4 +29,5 @@
 <%end%>
 <%if detailcase == "Preboda" %>
     <%= image_tag("preboda.png", :class => "imageShow") %>
+<%end%>
 <%end%>

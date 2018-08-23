@@ -1,0 +1,23 @@
+<%if obj%>
+<table class ="indexTable">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Sitio</th>
+      <th>Otros datos</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% obj.each do |detail| %>
+      <tr>
+        <td class="indexContent"><%= detail.name %></td>
+        <td class="indexContent"><%= detail.place %></td>
+        <td class="indexContent"><%= detail.extra %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%else%>
+<h2>No hay información disponible</h2>
+<%end%>

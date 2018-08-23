@@ -4,7 +4,11 @@ class DetailsController < ApplicationController
   # GET /details
   # GET /details.json
   def index
-    @details = Detail.all
+    if current_user && !current_user.admin?
+      @details = current_user.details.all
+    else
+      @details = Detail.all
+    end
   end
 
   # GET /details/1
@@ -69,6 +73,6 @@ class DetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def detail_params
-      params.require(:detail).permit(:case, :name, :place, :contact, :extra, :user_id)
+      params.require(:detail).permit(:case, :name, :place, :contact, :extra, :user_id, :introduction)
     end
 end

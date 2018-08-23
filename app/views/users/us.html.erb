@@ -1,0 +1,47 @@
+<div class="infoBox">
+  <div class="infoBoxDiv">
+    <h2 class="infoBoxTitle">¡¡¡Nos Casamos!!!</h2>
+    <div class="userUsName">
+        <% if @seluser.information %>
+          <% if @seluser.information.name %>
+            <%= @seluser.information.name %>
+          <%else%>
+            <%= @seluser.email  %>
+          <% end %>
+          <%else%>
+            <%=  @seluser.email %>
+        <% end %>
+      </div>
+      <% if @seluser.image %>
+        <div class="userUsImage">
+            <div>
+                <%= image_tag(@seluser.image.picture.url, class: "userUsImage") if @seluser.image.picture? %>
+            </div>
+        </div>
+      <% end %>
+      <% if @seluser.information %>
+      <h2 class="userUsInfo">
+        Te esperamos 
+        <% if @seluser.information.date %>
+          el día <%= @seluser.information.date.strftime("%d-%m-%Y") %>
+        <% end %>
+        <% if @seluser.information.hour %>
+          a las  <%= @seluser.information.hour.strftime("%H:%M") %>
+        <% end %>
+        <br>
+        <br>
+        <% if @seluser.information.place %>
+          La ceremonía será en  <%= @seluser.information.place %>
+        <% end %>
+        <% if @seluser.information.restaurant %>
+          y la celebración seguirá en  <%= @seluser.information.restaurant %>
+        <% end %>
+        <br>
+        <br>
+        <% if @seluser.information.city %>
+          <%= @seluser.information.city %>
+        <% end %>
+      </h2>
+      <%end%>
+  </div>
+</div>

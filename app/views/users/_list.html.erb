@@ -1,0 +1,51 @@
+<% if obj %>
+    <% if obj.size > 0 %>
+      <%= will_paginate %>
+          <% obj.each do |user| %>
+            <% if !user.admin %>
+              <div class="userList">
+                <div class="userName">
+                  <% if user.information %>
+                    <% if user.information.name %>
+                      <%= link_to user.information.name, user_us_path(user)  %>
+                    <%else%>
+                      <%= link_to user.email, user_us_path(user)  %>
+                    <% end %>
+                    <%else%>
+                      <%= link_to user.email, user_us_path(user)  %>
+                  <% end %>
+                </div>
+                <% if user.information %>
+                  <div class="userCity">
+                    <% if user.information.city %>
+                      <%= user.information.city %>
+                    <% end %>
+                  </div>
+                <% end %>
+                <% if user.information %>
+                  <div class="userDate">
+                    <% if user.information.date %>
+                      <%= user.information.date %>
+                    <% end %>
+                  </div>
+                <% end %>
+                <% if user.information %>
+                  <div class="userDate">
+                    <% if user.information.hour %>
+                      <%= user.information.hour.strftime("%H:%M") %>
+                    <% end %>
+                  </div>
+                <% end %>
+                <% if user.image %>
+                  <div class="userImage">
+                      <div>
+                          <%= image_tag(user.image.picture.url, width: "auto", height: "150") if user.image.picture? %>
+                      </div>
+                  </div>
+                <% end %>
+              </div>
+            <%end%>
+          <% end %>
+      <%= will_paginate %>
+    <% end %>
+<% end %>

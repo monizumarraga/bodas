@@ -5,6 +5,11 @@ class InformationController < ApplicationController
   # GET /information.json
   def index
     @information = Information.all
+    if current_user && !current_user.admin?
+      @information = current_user.information.all
+    else
+     @information = Information.all
+    end
   end
 
   # GET /information/1

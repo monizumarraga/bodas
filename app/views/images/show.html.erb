@@ -15,13 +15,16 @@
 <div class="connectLinks">
 <%= link_to t('.back', :default => t("helpers.links.back")),
               images_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              
+<% if user_signed_in? && (current_user==@image.user || current_user.admin?)  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_image_path(@image), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               image_path(@image),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Estás seguro?')) },
               :class => 'btn btn-danger' %>
+<% end%>
 </div>
 
 

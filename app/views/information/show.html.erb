@@ -61,6 +61,8 @@
 </div>
 
 <div class="connectLinks">
-  <%= link_to 'Editar', edit_information_path(@information) %> |
-  <%= link_to 'Atrás', information_index_path %>
+  <% if user_signed_in? && (current_user==@information.user || current_user.admin?)  %>
+    <%= link_to 'Editar', edit_information_path(@information) %> |
+    <%= link_to 'Atrás', information_index_path %>
+  <%end%>
 </div>

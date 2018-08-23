@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_18_063800) do
-
-# Could not dump table "data" because of following StandardError
-#   Unknown type 'reference' for column 'user'
+ActiveRecord::Schema.define(version: 2018_08_23_062629) do
 
   create_table "details", force: :cascade do |t|
     t.string "case"
@@ -24,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_18_063800) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "introduction"
     t.index ["user_id"], name: "index_details_on_user_id"
   end
 

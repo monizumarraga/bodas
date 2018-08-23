@@ -1,0 +1,21 @@
+<table class ="indexTable">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Sitio</th>
+      <th>Contacto</th>
+      <th>Otros datos</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% obj.each do |detail| %>
+      <tr>
+        <td class="indexContent"><%= detail.name %></td>
+        <td class="indexContent"><%= detail.place %></td>
+        <td class="indexContent"><%= detail.contact %></td>
+        <td class="indexContent"><%= detail.extra %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

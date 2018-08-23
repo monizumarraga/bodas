@@ -1,50 +1,12 @@
 <div class="infoBox">
   <div class="infoBoxDiv">
     <h2 class="infoBoxTitle">Usuarios</h2>
-      <% @users.each do |user| %>
-        <% if !user.admin %>
-          <div class="userList">
-            <div class="userName">
-              <% if user.information %>
-                <% if user.information.name %>
-                  <%= user.information.name %>
-                <%else%>
-                  <%= user.email %>
-                <% end %>
-                <%else%>
-                  <%= user.email %>
-              <% end %>
-            </div>
-            <% if user.information %>
-              <div class="userCity">
-                <% if user.information.city %>
-                  <%= user.information.city %>
-                <% end %>
+      <%= form_tag list_path, :method => 'get', :id => "users_search" do %>
+              <div class="center">
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "Search", :name => nil %>
               </div>
-            <% end %>
-            <% if user.information %>
-              <div class="userDate">
-                <% if user.information.date %>
-                  <%= user.information.date %>
-                <% end %>
-              </div>
-            <% end %>
-            <% if user.information %>
-              <div class="userDate">
-                <% if user.information.hour %>
-                  <%= user.information.hour %>
-                <% end %>
-              </div>
-            <% end %>
-            <% if user.image %>
-              <div class="userImage">
-                  <div>
-                      <%= image_tag(user.image.picture.url, width: "auto", height: "150") if user.image.picture? %>
-                  </div>
-              </div>
-            <% end %>
-          </div>
-        <%end%>
+        <div id="users"><%= render 'list', obj: @users%></div>
       <% end %>
   </div>
 </div>

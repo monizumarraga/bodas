@@ -19,9 +19,11 @@
             <td class="indexContent"><%= information.hour %></td>
             <td class="indexContent"><%= information.place %></td>
             <td class="indexContent"><%= information.restaurant %></td>
-            <td class="indexButton"><%= link_to 'Mostrar', information %></td>
-            <td class="indexButton"><%= link_to 'Editar', edit_information_path(information) %></td>
-            <td class="indexButton"><%= link_to 'Eliminar', information, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+          <% if user_signed_in? && (current_user==information.user || current_user.admin?)  %>
+              <td class="indexButton"><%= link_to 'Mostrar', information %></td>
+              <td class="indexButton"><%= link_to 'Editar', edit_information_path(information) %></td>
+              <td class="indexButton"><%= link_to 'Eliminar', information, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+            <% end%>
           </tr>
         <% end %>
       </tbody>
